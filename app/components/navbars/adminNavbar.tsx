@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import LogoutButton from '@/components/buttons/LogoutBtn';
+import LogoutButton from '@/app/components/buttons/LogoutBtn';
 import Sidebar from '@/components/sidebar/AdminSidebar';
 
 export default function AdminNavbar() {
