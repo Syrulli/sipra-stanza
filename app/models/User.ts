@@ -1,7 +1,6 @@
 import mongoose from 'mongoose';
 
-const userSchema = new mongoose.Schema(
-  {
+const userSchema = new mongoose.Schema({
     name: { type: String, trim: true },
     email: {
       type: String,
@@ -17,11 +16,13 @@ const userSchema = new mongoose.Schema(
       enum: ['customer', 'admin'],
       default: 'customer',
     },
+    resetPasswordToken: String,
+    resetPasswordExpire: Date,
   },
   {
     timestamps: true,
-    collection: 'tbl_users', 
-  }
+    collection: 'tbl_users',
+  },
 );
 
 export default mongoose.models.User || mongoose.model('User', userSchema);

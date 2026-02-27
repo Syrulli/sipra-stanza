@@ -39,7 +39,7 @@ export default function SignInPage() {
                 });
 
                 if (!res?.ok) {
-                    handleApiError(res?.error ?? 'Invalid email or password');
+                    handleApiError(res?.error || 'Invalid email or password');
                     return;
                 }
 
@@ -80,7 +80,7 @@ export default function SignInPage() {
                     return;
                 }
 
-                handleApiResponse(data); 
+                handleApiResponse(data);
                 const signInRes = await signIn('credentials', {
                     email,
                     password,
@@ -90,7 +90,7 @@ export default function SignInPage() {
                 if (signInRes?.ok) {
                     await redirectBasedOnRole();
                 } else {
-                    handleApiError('Account created, please sign in.');
+                    // handleApiError('Account created, please sign in.');
                     setIsLogin(true);
                 }
             }
@@ -113,7 +113,7 @@ export default function SignInPage() {
             </div>
 
             <div className="min-h-screen flex items-center justify-center p-4">
-                <div className="w-full max-w-4xl grid md:grid-cols-2 bg-gray-800 rounded-3xl shadow-2xl overflow-hidden">
+                <div className="w-full max-w-4xl grid md:grid-cols-2 bg-gray-800 rounded shadow-2xl overflow-hidden">
                     <div className="p-8 md:p-10 lg:p-12 flex flex-col justify-center">
                         <h1 className="text-3xl font-bold text-white mb-1">
                             {isLogin ? 'Sign in' : 'Create account'}
@@ -159,11 +159,23 @@ export default function SignInPage() {
                                 disabled={loading}
                                 className="w-full px-4 py-2.5 text-sm border border-gray-300 rounded-lg bg-gray-900 text-white"
                             />
+                            {isLogin && (
+                                <div className="text-right">
+                                    <button
+                                        type="button"
+                                        onClick={() => router.push('/forgot-password')}
+                                        disabled={loading}
+                                        className="text-gray-300 cursor-pointer text-sm"
+                                    >
+                                        Forgot password?
+                                    </button>
+                                </div>
+                            )}
 
                             <button
                                 type="submit"
                                 disabled={loading}
-                                className="w-full bg-indigo-600 text-white py-2.5 rounded-lg disabled:opacity-60"
+                                className="w-full bg-indigo-600 text-white py-2.5 rounded-lg disabled:opacity-60 cursor-pointer"
                             >
                                 {loading ? 'Processing...' : isLogin ? 'Sign in' : 'Create account'}
                             </button>
@@ -182,7 +194,7 @@ export default function SignInPage() {
                             <button
                                 onClick={handleGoogleSignIn}
                                 disabled={loading}
-                                className="w-full flex items-center justify-center gap-3 py-2.5 bg-white rounded-lg"
+                                className="w-full flex items-center justify-center gap-3 py-2.5 bg-white rounded-lg cursor-pointer"
                             >
                                 <FcGoogle className="h-5 w-5" />
                                 <span className="text-gray-800 text-sm font-medium">
