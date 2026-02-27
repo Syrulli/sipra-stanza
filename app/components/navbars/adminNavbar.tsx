@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import LogoutButton from '@/app/components/buttons/LogoutBtn';
-import Sidebar from '@/components/sidebar/AdminSidebar';
+import Sidebar from '@/app/components/sidebar/AdminSidebar';
 
 export default function AdminNavbar() {
     const [open, setOpen] = useState(false);
