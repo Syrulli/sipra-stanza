@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import LogoutButton from '@/app/components/buttons/LogoutBtn';
-import Sidebar from '@/app/components/sidebar/AdminSidebar';
+import LogoutButton from '@/app/components/buttons/logoutBtn';
+import Sidebar from '@/app/components/sidebar/adminSidebar';
 
 export default function AdminNavbar() {
     const [open, setOpen] = useState(false);
