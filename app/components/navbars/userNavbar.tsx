@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { CiShoppingCart, FiMenu, FiX, FiChevronDown, CiUser } from '@/components/icons/iconPacks';
+import { CiShoppingCart, FiMenu, FiX, FiChevronDown, CiUser } from '@/app/components/icons/iconPacks';
 import { Menu, Transition } from '@headlessui/react';
 import { Navigation } from '@/app/constant/userNavbarConst';
 

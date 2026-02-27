@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { handleApiResponse, handleApiError } from '@/app/lib/apiError';
-import DarkVeil from '@/components/animations/darkVeil';
+import DarkVeil from '@/app/components/animations/darkVeil';
 
 export default function ResetPasswordClient() {
     const searchParams = useSearchParams();
