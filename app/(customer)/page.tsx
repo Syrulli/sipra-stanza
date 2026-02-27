@@ -1,4 +1,4 @@
-import DarkVeil from '@/app/components/animations/darkVeil'
+import DarkVeil from '@/components/animations/darkVeil'
 export default function Home() {
   return (
     <div className="min-h-screen relative overflow-hidden">

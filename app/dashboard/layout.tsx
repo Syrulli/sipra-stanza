@@ -2,8 +2,8 @@
 
 import { SessionProvider } from 'next-auth/react';
 import { ReactNode } from 'react';
-import AdminSidebar from '@/components/sidebar/adminSidebar';
-import AdminNavbar from '@/components/navbars/adminNavbar';
+import AdminSidebar from '@/app/components/sidebar/AdminSidebar';
+import AdminNavbar from '@/app/components/navbars/AdminNavbar';
 
 export default function DashboardLayout({ children, }: { children: ReactNode; }) {
     return (
