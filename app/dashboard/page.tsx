@@ -1,7 +1,7 @@
 import { getServerSession } from 'next-auth';
 import { authOptions } from '../api/auth/[...nextauth]/route';
 import { redirect } from 'next/navigation';
-import LogoutButton from '@/app/components/buttons/LogoutBtn';
+import LogoutButton from '@/app/components/buttons/logoutBtn';
 
 export default async function AdminDashboard() {
   const session = await getServerSession(authOptions);
